@@ -1,12 +1,17 @@
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return(
         <nav className='navbar-container'>
             <h1 className='logo'>Task Flow</h1>
             <div>
-                <button className='side-medium-margin'>Login</button>
-                <button className='side-medium-margin'>Sign Up</button>
+                <Link to={'/login'}>
+                    <button className='side-medium-margin login-signup-button '>Login</button>
+                </Link>
+                <Link to={'/signup'}>
+                    <button className='side-medium-margin login-signup-button '>Sign Up</button>
+                </Link>
             </div>
         </nav>
     )
