@@ -64,8 +64,12 @@ option{
 select option[disabled] {
     color: #7f8c8d; 
 }
-  
 
+option[value='SelectRole'] {
+    color: #9ea8a8;
+    font-size: 15px;
+}
+  
 input::placeholder {
     font-size: 15px;
     color: #9ea8a8;

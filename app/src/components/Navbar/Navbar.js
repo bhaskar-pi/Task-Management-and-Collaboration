@@ -9,7 +9,7 @@ const Navbar = () => {
                 <Link to={'/login'}>
                     <button className='side-medium-margin login-signup-button '>Login</button>
                 </Link>
-                <Link to={'/signup'}>
+                <Link to={'/register'}>
                     <button className='side-medium-margin login-signup-button '>Sign Up</button>
                 </Link>
             </div>

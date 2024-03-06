@@ -11,7 +11,7 @@ const LoginPage = () => {
                 <InputField type='password' placeholder='&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;' label='Password' id='password' />
             </div>
             <button className='submit-button'>Login</button>
-            <RedirectToSignupOrLogin text="If not registered, " redirectLinkText='sign up' path='/signup' />
+            <RedirectToSignupOrLogin text="If not registered, " redirectLinkText='register' path='/register' />
         </div>
     )
 }
