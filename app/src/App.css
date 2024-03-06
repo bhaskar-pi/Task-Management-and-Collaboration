@@ -170,6 +170,9 @@ input::placeholder {
 .link{
     text-decoration: none;  
 }
+.link-color {
+    color: #bf1d0b;
+}
 
 .login-signup-button {
     width: 100px;
