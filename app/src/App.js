@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUpPage from './containers/SignUpPage/SignUpPage';
 import LoginPage from './containers/LoginPage/LoginPage';
 import NotFound from './components/NotFound/NotFound';
+import { useSelector } from 'react-redux';
 
 const App = () => {
   return(

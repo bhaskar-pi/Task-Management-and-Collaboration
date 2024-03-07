@@ -2,27 +2,27 @@ import {InputField, SelectField} from '../../components/InputFiled/InputField'
 import RedirectToSignupOrLogin from '../../components/RedirectToSignupOrLogin/RedirectToSignupOrLogin'
 import { RoleOptions } from '../../constants'
 import './SignUpPage.css'
+import { useSelector, useDispatch } from 'react-redux'
+import { updateUserRegisterForm } from '../../store/userRegister.slice'
 import { useState } from 'react'
+import {cloneDeep} from 'lodash'
 
 const SignUpPage = () => {
-    const [userData, setUserData] = useState({
-        businessName: '',
-        role: '',
-        username: '',
-        email: '',
-        password: '',
-    })
+    const dispatch = useDispatch();
+    const userRegisterDetails = useSelector((state) => state.userRegisterForm.user);
+
+    const [user, setUser] = useState(cloneDeep(userRegisterDetails))
 
     const onChange = (e) => {
-        e.preventDefault()
-        
-        setUserData({...userData, [e.target.name]: e.target.value})
-    }
+        e.preventDefault();
+        const { name, value } = e.target;
+        setUser({ ...user, [name]: value });
+    };
 
     const onRegister = () => {
-        console.log({userData})
-    }
-    
+        dispatch(updateUserRegisterForm(user))
+    };
+
     return(
         <div className='signup-page'>
             <h1 className='heading small-margin'>Sign Up</h1>
