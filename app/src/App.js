@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUpPage from './containers/SignUpPage/SignUpPage';
 import LoginPage from './containers/LoginPage/LoginPage';
 import NotFound from './components/NotFound/NotFound';
-import { useSelector } from 'react-redux';
+import Dashboard from './containers/Dashboard/Dashboard';
 
 const App = () => {
   return(
@@ -13,6 +13,7 @@ const App = () => {
         <Route path='/' element={<HomePage />} />
         <Route path='/register' element={<SignUpPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       

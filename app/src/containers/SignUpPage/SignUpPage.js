@@ -6,9 +6,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateUserRegisterForm } from '../../store/userRegister.slice'
 import { useState } from 'react'
 import {cloneDeep} from 'lodash'
+import { registerApi } from '../../services/api'
+import {toast} from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const SignUpPage = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
+
     const userRegisterDetails = useSelector((state) => state.userRegisterForm.user);
 
     const [user, setUser] = useState(cloneDeep(userRegisterDetails))
@@ -19,8 +24,18 @@ const SignUpPage = () => {
         setUser({ ...user, [name]: value });
     };
 
-    const onRegister = () => {
+    const onRegister = async () => {
         dispatch(updateUserRegisterForm(user))
+
+        try {
+           const response = await registerApi(user) 
+            toast.success(response.data)
+            navigate('/login')
+        } catch (error) {
+            console.log('error in registerApi', error)
+            toast.error(error.response.data)
+            
+        }
     };
 
     return(

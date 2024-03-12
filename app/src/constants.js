@@ -1,4 +1,6 @@
+export const BASE_URL = 'http://localhost:4000'
+
 export const RoleOptions = [
-    { value: 'manager', label: 'Manager' },
-    { value: 'teamLead', label: 'Team Lead' },
+    { value: 'Manager', label: 'Manager' },
+    { value: 'Team Lead', label: 'Team Lead' },
   ];
